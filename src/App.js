@@ -17,14 +17,16 @@ export default function App() {
         <div className='nav-links'>
           <NavLink to='/'>Welcome</NavLink>
           <NavLink to='/character-list'>Character List</NavLink>
+          <NavLink to='/search-form'>Search Characters</NavLink>
         </div>
       </nav>
-      <div>
-        <SearchForm />
-      </div>
+
       <Switch>
       <Route path='/character-list'>
           <CharacterList />
+        </Route>
+        <Route path='/search-form'>
+          <SearchForm />
         </Route>
         <Route path='/'>
           <WelcomePage />

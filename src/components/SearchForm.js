@@ -41,9 +41,15 @@ export default function SearchForm(props) {
      </form>
      <div className='search-results'>
       <ul>
-       {searchResults.map(char => (
-         <li>{char.name}</li>
-       ))}
+       {searchResults.map((char, index) => {
+         return <CharacterCard
+         key={index}
+         name={char.name}
+         image={char.image}
+         species={char.species}
+         gender={char.gender}
+         />
+       })}
       </ul>
       </div>
     </section>
