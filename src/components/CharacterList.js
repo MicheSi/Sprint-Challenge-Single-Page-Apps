@@ -24,10 +24,10 @@ export default function CharacterList() {
       {character.map((char, index) => {
         return <CharacterCard
           key={index}
-          image={char.image}
           name={char.name}
+          image={char.image}
           species={char.species}
-          gender={gender}
+          gender={char.gender}
           />
       })}
     </section>
