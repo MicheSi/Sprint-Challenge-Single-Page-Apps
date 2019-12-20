@@ -82,3 +82,7 @@ header h1 {
 .card-text {
   font-size: 1.2rem;
 }
+
+.search-form {
+  text-align: center;
+}

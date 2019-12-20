@@ -39,7 +39,7 @@ export default function SearchForm(props) {
         onChange={handleChange}
        />
      </form>
-     <div className='search-results'>
+     <div className='character-list'>
       <ul>
        {searchResults.map((char, index) => {
          return <CharacterCard
