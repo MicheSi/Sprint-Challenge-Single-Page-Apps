@@ -3,8 +3,10 @@ import React from "react";
 import Header from "./components/Header.js";
 import CharacterList from "./components/CharacterList.js";
 import WelcomePage from "./components/WelcomePage.js";
+import SearchForm from "./components/SearchForm.js";
 // dependencies
 import {Route, NavLink, Switch} from 'react-router-dom';
+
 
 
 export default function App() {
@@ -17,6 +19,9 @@ export default function App() {
           <NavLink to='/character-list'>Character List</NavLink>
         </div>
       </nav>
+      <div>
+        <SearchForm />
+      </div>
       <Switch>
       <Route path='/character-list'>
           <CharacterList />
