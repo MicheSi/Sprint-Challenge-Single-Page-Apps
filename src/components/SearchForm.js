@@ -3,27 +3,27 @@ import Axios from 'axios';
 import CharacterCard from "./CharacterCard";
 
 export default function SearchForm(props) {
- const [data, setData] = useState('');
- const [query, setQuery] = useState([]);
+ const [searchTerm, setSearchTerm] = useState('');
+ const [searchResults, setSearchResults] = useState([]);
 
  useEffect(() => {
   Axios.get('https://rickandmortyapi.com/api/character/')
   .then(res => {
     console.log(res.data.results)
     const characters = res.data.results.filter(char =>
-      char.name.toLowerCase().includes(query.toLowerCase())
+      char.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
-      setData(characters);
+      setSearchResults(characters);
   })
   .catch(err => {
     console.log('No data to display', err);
   })
-}, [query]);
+}, [searchTerm]);
  
  
  const handleChange = e => {
    console.log(e.target.value)
-   setQuery(e.target.value);
+   setSearchTerm(e.target.value);
  };
 
   return (
@@ -34,15 +34,15 @@ export default function SearchForm(props) {
         id='name'
         type='text'
         name='textfield'
-        value={query}
+        value={searchTerm}
         placeholder='Enter character name'
         onChange={handleChange}
        />
      </form>
      <div className='search-results'>
       <ul>
-       {query.map(char => (
-         <li key={char}>{char}</li>
+       {searchResults.map(char => (
+         <li>{char.name}</li>
        ))}
       </ul>
       </div>
