@@ -29,6 +29,8 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 > Answer:
 
+The benefits to client-side routing are faster load times between pages (after the website initially loads) and smoother transition between views since less data is being processed.
+
 ## Project Set Up
 
 Follow these steps to set up and work on your project:
